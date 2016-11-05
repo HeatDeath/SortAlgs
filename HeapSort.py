@@ -9,8 +9,8 @@ import random
 #import heapq #堆数据结构模块
 
 
-#下沉：将根节点与其左右子节点比较，若小于其子节点，则将根节点下沉
-def sink(a,i,n):
+#调整堆：将根节点与其左右子节点比较，若小于其子节点，则将根节点下沉
+def adjustheap(a,i,n):
     j=i*2+1
     while j<n:
         if j+1<n and a[j]<a[j+1]:#若j+1=n，则说明a[j]是该数组中的最后一个元素
@@ -26,7 +26,7 @@ def sink(a,i,n):
 #构造堆：将原始的random数组安排进堆中，使其成为大根堆（最大堆，大顶堆）
 def buildheap(a):
     for i in range(len(a)//2-1,-1,-1):#从倒数第二层开始（自底向上），从右向左，依次遍历根节点
-        sink(a,i,len(a))
+        adjustheap(a,i,len(a))
 
 #大根堆排序
 def HeapSort(a):
@@ -35,7 +35,7 @@ def HeapSort(a):
     #将堆顶元素与最后一个节点交换位置，再调整堆
     for i in range(len(a)-1,0,-1):
         a[0],a[i]=a[i],a[0]
-        sink(a,0,i)#将新的堆顶元素下沉到合适的位置，下沉结束后，余下元素依然是大根堆
+        adjustheap(a,0,i)#将新的堆顶元素下沉到合适的位置，下沉结束后，余下元素依然是大根堆
 
 
 '''

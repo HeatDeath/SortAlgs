@@ -1,3 +1,9 @@
+'''
+排序名称： 快速排序（Quick Sort）（交换排序）
+基本思想： 通过一趟排序将要排序的数据分割成独立的两部分，其中一部分的所有数据都比另外一部分的所有数据都要小，
+         然后再按此方法对这两部分数据分别进行快速排序，整个排序过程可以递归进行，以此达到整个数据变成有序序列
+性能：  时间复杂度O(nlog2n) 不稳定的排序
+'''
 import random
 import time
 
@@ -15,7 +21,7 @@ def QuickSort(a,lo,hi):
     QuickSort(a,flag+1,hi)#将基准数后边递归排序
 
 
-#该算法看了visualgo之后，自然而然就写出来了：）
+#该算法看了visuAlgo之后，自然而然就写出来了：）
 def position(a,lo,hi):
     flag=a[lo]
     j=lo
@@ -31,8 +37,8 @@ def QuickSortX(a, lo, hi):
     if lo >= hi:
         return
     mark = position(a, lo, hi)
-    QuickSort(a, lo, mark - 1)#将左侧的部分递归排序
-    QuickSort(a, mark + 1, hi)#将右侧的部分递归排序
+    QuickSortX(a, lo, mark - 1)#将左侧的部分递归排序
+    QuickSortX(a, mark + 1, hi)#将右侧的部分递归排序
 
 
 #以下内容为通用模板

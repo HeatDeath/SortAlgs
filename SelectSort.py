@@ -15,7 +15,7 @@ def SelectSort(a):
         min=i#把min标记初始化在元素a[i]处
         for j in range(i+1,len(a)):#向右侧查找
             if a[j]<a[min]:#如果找到a[j]<a[min]（被min标记的元素）
-                min=j;#则将min标记移动到a[j]处
+                min=j#则将min标记移动到a[j]处
                       #min标记在找到a[i]及其右侧最小元素之前将持续右移，若未找到<a[i]的元素，则a[i]与自己交换
         a[i],a[min]=a[min],a[i]
 

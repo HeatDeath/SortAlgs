@@ -13,15 +13,15 @@ import time
 import random
 def ShellSort(a):
     h=1
-    while h<len(a)/3:
+    while h<len(a)/3:#根据数组长度，计算h的最大值
         h=h*3+1
 
-    while h>=1:
+    while h>=1:#不断缩小间距h的值，直到h=1为止
         for i in range(h,len(a)):
-            for j in range(i,h-1,-h):
-                if a[j]<a[j-h]:
+            for j in range(i,h-1,-h):#从i开始向左遍历，间隔为h的元素
+                if a[j]<a[j-h]:#若左侧元素较小，则交换位置
                     a[j],a[j-h]=a[j-h],a[j]
-        h=int(h/3)
+        h=int(h/3)#缩小间隔
 
 
 #以下内容为通用模板

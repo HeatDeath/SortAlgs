@@ -25,7 +25,8 @@ def InsertSortX(a):
     for i in range(1,len(a)):
         tmp=a[i]#利用tmp储存a[i]当前的值
         position=i#位置标记初始化为当前位置
-        for j in range(0,i)[::-1]:#从位置a[i-1]开始向左遍历到a[1]
+        #for j in range(0,i)[::-1]:#从位置a[i-1]开始向左遍历到a[1]
+        for j in range(i-1,-1,-1):
             if tmp<a[j]:#若遇到大于a[i]的元素，将其右移(此时a[i]"悬空")
                 a[j+1]=a[j]
                 position-=1#位置标记左移一位

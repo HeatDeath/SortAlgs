@@ -12,13 +12,13 @@ def BucketSort(a):
     for i in range(len(a)):#遍历a[]，将a[]中的元素依次放入相应的桶中
         buckets[a[i] - min(a)] += 1
 
-    Sorted_a = []
+    sorted = []
 
     for i in range(len(buckets)):#遍历buckets[]
         if buckets[i] != 0:#排除元素个数为0的桶
-            Sorted_a += [i + min(a)] * buckets[i]#将(buckets的下标+min(a))(还原为原来的数字）
+            sorted += [i + min(a)] * buckets[i]#将(buckets的下标+min(a))(还原为原来的数字）
                                                  # 依次放入buckets[i]个
-    return Sorted_a
+    return sorted
 
 
 #以下内容为通用模板
